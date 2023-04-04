@@ -29,7 +29,7 @@ jobs:
       run: pnpm install
 
     - name: Run test cases
-      run: pnpm test
+      run: npm run test
 
   build:
     runs-on: ubuntu-latest
@@ -47,8 +47,11 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
-    - name: Build
-      run: ppm build
+    - name: Build nutui
+      run: npm run build
 
-    - name: Build Taro
-      run: ppm build:taro:vue
+    - name: Build nutui-taro
+      run: npm run build:taro:vue
+
+    - name: Build nutui demo
+      run: npm run build:site
