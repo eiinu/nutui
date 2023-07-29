@@ -1,5 +1,5 @@
 name: 🐛 错误报告 Bug Report
-description: 创建一个 Issue 帮助我们改进组件。
+description: 创建一个 Issue 帮助我们改进组件库。
 body:
   - type: markdown
     attributes:
