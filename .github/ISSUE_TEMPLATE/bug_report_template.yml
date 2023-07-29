@@ -95,7 +95,9 @@ body:
     attributes:
       label: 环境信息
       description: |
-        如果你在 Taro 框架中使用 NutUI，可以在项目根目录执行 `taro info`，并将结果粘贴在这里。
+        对于 `@nutui/nutui-taro`，你可以在项目根目录执行 `taro info`，并将结果粘贴在这里。
+
+        对于 `@nutui/nutui`，你可以执行 `npx envinfo --system --npmPackages @nutui/nutui --binaries --browsers`。
 
   - type: textarea
     id: taro
