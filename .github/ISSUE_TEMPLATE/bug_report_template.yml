@@ -47,6 +47,8 @@ body:
         - jd
         - tt
         - 其他小程序
+    validations:
+      required: true
 
   - type: input
     id: reproduce-link
