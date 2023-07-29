@@ -18,7 +18,7 @@ body:
     id: npm
     attributes:
       label: NutUI 包名
-      description: 选择使用的 NutUI 包名
+      description: 选择使用的 NutUI NPM 包名
       options:
         - "@nutui/nutui"
         - "@nutui/nutui-taro"
@@ -55,7 +55,7 @@ body:
       description: |
         1、你可以通过 [Playground](https://nutui.jd.com/playground/) 创建一个可复现实例，它基于组件库最新版本的代码。
 
-        2、你可以通过 [CodeSandbox](https://codesandbox.io/s/nutui4-vite-demo-2fw7xh?file=/src/App.vue) 创建一个可复现实例，它支持选择特定版本的 NutUI。
+        2、你也可以通过 [CodeSandbox](https://codesandbox.io/s/nutui4-vite-demo-2fw7xh?file=/src/App.vue) 创建一个可复现实例，它支持选择特定版本的 NutUI。
 
         3、对于 `@nutui/nutui-taro` 中的问题，建议提供一个最小化可复现代码仓库。
         - 最小化：意味着它应该只包含与问题相关的代码与配置，而不是一个庞大的、难以排查问题的仓库。
@@ -66,16 +66,40 @@ body:
       required: true
 
   - type: textarea
-    id: logs
+    id: reproduce-steps
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
+      label: 重现步骤
+      description: |
+        简洁清晰的重现步骤能够帮助我们更迅速地定位问题所在。
+        
+        请使用 Markdown 语法格式化步骤中涉及的列表、代码片段等，否则它将会非常丑陋。
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: 期望的结果是什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: actually-happening
+    attributes:
+      label: 实际的结果是什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: taro
+    attributes:
+      label: 环境信息
+      description: |
+        如果你在 Taro 框架中使用 NutUI，可以在项目根目录执行 `taro info`，并将结果粘贴在这里。
+
+  - type: textarea
+    id: taro
+    attributes:
+      label: 其他补充信息
+      description: |
+        请在这里补充你认为可能产生关联的信息：比如 Vue 版本、webpack/vite 版本、Node 版本等，或者进行了哪些配置，使用了哪些插件等信息。
