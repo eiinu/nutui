@@ -100,7 +100,7 @@ body:
         对于 `@nutui/nutui`，你可以执行 `npx envinfo --system --npmPackages @nutui/nutui --binaries --browsers`。
 
   - type: textarea
-    id: taro
+    id: extra
     attributes:
       label: 其他补充信息
       description: |
