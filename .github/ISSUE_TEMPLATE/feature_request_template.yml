@@ -1,62 +1,37 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+name: \U0001F680 新功能请求 Feature Request
+description: 对组件库或者仓库本身的建议和想法。
+title: "[FR]: "
+labels: ["Feature Request"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+        **在开始之前...**
+
+        这个表单仅用于新功能请求。如果你有使用上的问题，或者不确定它是否是一个 bug，请先：
+
+        - 查看组件文档 [@nutui/nutui](https://nutui.jd.com/h5/vue/4x/#/zh-CN/guide/intro) [@nutui/nutui-taro](https://nutui.jd.com/taro/vue/4x/#/zh-CN/guide/intro)
+        - 在 [Issue](https://github.com/jdf2e/nutui/issues) 列表中查找解决方案
+        - 查看 [常见问题 QA](https://github.com/jdf2e/nutui/issues/2461)
+  
   - type: textarea
-    id: what-happened
+    id: problem-description
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: 这个功能解决了什么问题？
+      description: |
+        请尽可能详尽地说明这个需求的用例和场景。最重要的是：解释清楚是怎样的用户体验需求催生了这个功能上的需求。
+
+        通常来说，我们只考虑添加在现有的组件方式无法轻松实现的功能。新功能的用例也应当足够常见。
+      placeholder: 请填写
     validations:
       required: true
-  - type: dropdown
-    id: version
+
+  - type: textarea
+    id: proposed-API
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+      label: 你期望的组件设计是怎样的？
+      description: |
+        描述一下你期望这个新功能的 API 是如何使用的，并提供一些代码示例。请务必使用 Markdown 格式化你的代码片段。
+      placeholder: 请填写
     validations:
       required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
