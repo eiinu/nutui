@@ -1,0 +1,79 @@
+name: 🐛 错误报告 Bug Report
+description: 创建一个 Issue 帮助我们改进组件。
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **在开始之前……**
+
+        这个表单仅用于错误报告。对于在使用中遇到的问题，请优先使用以下方式寻找解决方案：
+
+        - 查看组件文档 [@nutui/nutui](https://nutui.jd.com/h5/vue/4x/#/zh-CN/guide/intro) [@nutui/nutui-taro](https://nutui.jd.com/taro/vue/4x/#/zh-CN/guide/intro)
+        - 在 [Issue](https://github.com/jdf2e/nutui/issues) 列表中查找解决方案
+        - 查看 [常见问题 QA](https://github.com/jdf2e/nutui/issues/2461)
+
+        注意：如果你发现一个已关闭 issue 的问题在最新版本中仍然存在，请不要在旧 issue 下面留言，而应该当前的表单创建新的 issue。
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: NutUI 包名
+      description: 选择你使用的 NutUI 包名。
+      options:
+        - @nutui/nutui
+        - @nutui/nutui-taro
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: NutUI 版本号
+      description: 请输入项目中实际使用到的 NutUI 版本号
+      placeholder: 例如：4.1.0 或者 3.3.8
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      options:
+        - 1.0.2 (Default)
+        - 1.0.3 (Edge)
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
