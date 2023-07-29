@@ -15,10 +15,10 @@ body:
         注意：如果你发现一个已关闭 issue 的问题在最新版本中仍然存在，请不要在旧 issue 下面留言，而应该当前的表单创建新的 issue。
 
   - type: dropdown
-    id: platform
+    id: npm
     attributes:
       label: NutUI 包名
-      description: 选择你使用的 NutUI 包名。
+      description: 选择使用的 NutUI 包名
       options:
         - "@nutui/nutui"
         - "@nutui/nutui-taro"
@@ -29,30 +29,42 @@ body:
     id: version
     attributes:
       label: NutUI 版本号
-      description: 请输入项目中实际使用到的 NutUI 版本号
-      placeholder: 例如：4.1.0 或者 3.3.8
+      description: 输入使用的 NutUI 版本号
+      placeholder: 例如：4.0.0
     validations:
       required: true
 
-  - type: textarea
-    id: what-happened
+  - type: dropdown
+    id: platform
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: 平台
+      multiple: true
+      description: 选择对应的平台
+      options:
+        - h5
+        - weapp
+        - alipay
+        - jd
+        - tt
+        - others
+
+  - type: input
+    id: reproduce-link
+    attributes:
+      label: 重现链接
+      description: |
+        1、你可以通过 [Playground](https://nutui.jd.com/playground/) 创建一个可复现实例，它基于组件库最新版本的代码。
+
+        2、你可以通过 [CodeSandbox](https://codesandbox.io/s/nutui4-vite-demo-2fw7xh?file=/src/App.vue) 创建一个可复现实例，它支持选择特定版本的 NutUI。
+
+        3、对于 `@nutui/nutui-taro` 中的问题，建议提供一个最小化可复现代码仓库。
+        - 最小化：意味着它应该只包含与问题相关的代码与配置，而不是一个庞大的、难以排查问题的仓库。
+        - 可复现：这是创建 issue 的基础要求。
+
+        请不要乱填一个链接，那只会让你的 issue 被直接关闭。
     validations:
       required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+
   - type: textarea
     id: logs
     attributes:
