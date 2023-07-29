@@ -20,8 +20,8 @@ body:
       label: NutUI 包名
       description: 选择你使用的 NutUI 包名。
       options:
-        - @nutui/nutui
-        - @nutui/nutui-taro
+        - "@nutui/nutui"
+        - "@nutui/nutui-taro"
     validations:
       required: true
 
