@@ -81,6 +81,7 @@
           "type": "component",
           "show": true,
           "desc": "按钮用于触发一个操作，如提交表单。",
+          "setup": true,
           "author": "richard1015"
         },
         {
