@@ -7,10 +7,14 @@
       <div class="tab-item" @click="switchTo('h5')">h5</div>
       <div class="tab-item" @click="switchTo('taro')">taro</div>
     </div>
+    <nut-switch :model-value="isDark" @click="() => toggleDark()" />
   </div>
 </template>
 <script setup lang="ts">
+import { useDark } from '@/sites/utils';
 import { RefData } from '@/sites/assets/util/ref';
+import { Switch as NutSwitch } from '@/packages/nutui.vue';
+const { isDark, toggleDark } = useDark();
 const toHome = () => {
   RefData.getInstance().currentRoute.value = '/';
 };

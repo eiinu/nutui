@@ -72,6 +72,7 @@
     "@nutui/icons-vue": "^0.1.1",
     "@nutui/icons-vue-taro": "^0.0.9",
     "@nutui/touch-emulator": "workspace:^",
+    "@vueuse/core": "^10.7.1",
     "sass": "^1.69.6",
     "vue-router": "^4.2.5"
   },

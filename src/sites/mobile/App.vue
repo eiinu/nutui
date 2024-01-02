@@ -1,23 +1,27 @@
 <template>
-  <div v-if="isShow" id="nav">
-    <div class="back" @click="goBack">
-      <Left />
+  <nut-config-provider :theme="isDark ? 'dark' : ''">
+    <div v-if="isShow" id="nav">
+      <div class="back" @click="goBack">
+        <Left />
+      </div>
+      {{ title }}
+      <div class="translate" @click="translateChange">
+        <img
+          src="https://img14.360buyimg.com/imagetools/jfs/t1/135168/8/21387/6193/625fa81aEe07cc347/55ad5bc2580c53a6.png"
+        />
+      </div>
     </div>
-    {{ title }}
-    <div class="translate" @click="translateChange">
-      <img
-        src="https://img14.360buyimg.com/imagetools/jfs/t1/135168/8/21387/6193/625fa81aEe07cc347/55ad5bc2580c53a6.png"
-      />
-    </div>
-  </div>
-  <router-view />
+    <router-view />
+  </nut-config-provider>
 </template>
 <script setup lang="ts">
 import { watch, computed, onBeforeMount } from 'vue';
+import { useDark } from '../utils';
 import { useRoute, useRouter } from 'vue-router';
 import { isMobile } from '@/sites/assets/util';
 import { translateChange, initSiteLang } from '../assets/util/useTranslate';
 import { Left } from '@nutui/icons-vue';
+const { isDark } = useDark();
 const route = useRoute();
 const router = useRouter();
 onBeforeMount(() => {
