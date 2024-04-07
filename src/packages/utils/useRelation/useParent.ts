@@ -1,7 +1,12 @@
-import { getCurrentInstance, computed, inject, onUnmounted } from 'vue'
+import { getCurrentInstance, computed, inject, onUnmounted, InjectionKey } from 'vue'
 
-export const useParent = (key: symbol) => {
-  const parent = inject<any>(key, null)
+export const useParent = <T>(key: symbol | InjectionKey<T>) => {
+  const parent = inject<T & {
+    unlink: (child: any) => void
+    link: (child: any) => void
+    children: any[]
+    internalChildren: any[]
+  } | null>(key, null)
 
   if (parent) {
     const instance = getCurrentInstance()!

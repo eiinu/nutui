@@ -1,10 +1,10 @@
-import { reactive, provide } from 'vue'
+import { reactive, provide, InjectionKey } from 'vue'
 
-export const useChildren = (key: symbol) => {
+export const useChildren = <T>(key: symbol | InjectionKey<T>) => {
   const publicChildren = reactive<any[]>([])
   const internalChildren = reactive<any[]>([])
 
-  const linkChildren = (value?: any) => {
+  const linkChildren = (value?: T) => {
     const link = (child: any) => {
       if (child.proxy) {
         internalChildren.push(child)
