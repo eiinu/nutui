@@ -517,6 +517,7 @@
           "name": "Drag",
           "cName": "拖拽",
           "desc": "拖拽组件",
+          "setup": true,
           "author": "Drjingfubo"
         },
         {
